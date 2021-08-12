@@ -1,32 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <app-card v-bind="card" />
 </template>
 
+<script>
+export default {
+  name: "App",
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-#nav {
-  padding: 30px;
+html {
+  //this defines what 1rem is
+  font-size: 62.5%; // 1 rem = 10px; 10px/16px = 62.5%
+  scroll-behavior: smooth;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+:root {
+  --white: #ffffff;
+  --primary: #f26f14;
+  --secondary: #ff8e49;
+  --grey-black: #444444;
+  --grey: #9e9e9e;
 }
 </style>
