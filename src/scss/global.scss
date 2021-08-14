@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    //this defines what 1rem is
+    font-size: 62.5%; // 1 rem = 10px; 10px/16px = 62.5%
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: #ffffff;
+    --dark: #231f1f;
+    --primary: #f26f14;
+    --secondary: #ff8e49;
+    --tertiary: #f0690a;
+    --grey-black: #444444;
+    --grey-light: #696969;
+    --grey: #9e9e9e;
+
+    --banner-background-first-color: #155175;
+    --banner-background-second-color: #000e1d;
+}
