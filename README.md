@@ -1,5 +1,8 @@
 # Teste de Front-end para a empresa upLexis
 
+## Link do deploy: [UpLexis Frontend Test](https://uplexis-frontend-test.netlify.app/#/)
+
+<br />
 
 ## Principais dificuldades na criação do projeto :
 
