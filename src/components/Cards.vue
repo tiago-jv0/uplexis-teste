@@ -6,11 +6,35 @@
 
 <script>
 import Card from "./Card.vue";
+
 export default {
   components: { Card },
   name: "Cards",
   props: {
-    items: Array,
+    data: {
+      type: Array,
+      required: true,
+    },
+    orderBy: { type: String, default: () => "releaseDate" },
+    filter: { type: String, default: () => "Mundo" },
+  },
+
+  computed: {
+    items() {
+      let filteredData =
+        this.filter === "Mundo"
+          ? [...this.data]
+          : this.data.filter((item) => item["category"] === this.filter);
+
+      const sortFunctions = {
+        price: (currentItem, nextItem) => currentItem.price - nextItem.price,
+        releaseDate: (currentItem, nextItem) =>
+          new Date(currentItem.releaseDate).getTime() >=
+          new Date(nextItem.releaseDate).getTime(),
+      };
+
+      return filteredData.sort(sortFunctions[this.orderBy]);
+    },
   },
 };
 </script>
