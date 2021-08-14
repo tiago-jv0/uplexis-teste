@@ -1,7 +1,7 @@
 <template>
-  <div class="category">
+  <div :class="['category', selected && 'category--selected']">
     <div class="category__image">
-      <img :src="iconUrl" :alt="iconDescription" />
+      <font-awesome-icon :icon="icon" />
     </div>
 
     <p class="category__text">{{ category }}</p>
@@ -12,11 +12,11 @@
 export default {
   name: "Category",
   props: {
-    iconUrl: {
-      type: String,
-      required: true,
+    selected: {
+      type: Boolean,
+      default: () => false,
     },
-    iconDescription: {
+    icon: {
       type: String,
       required: true,
     },
@@ -33,12 +33,22 @@ export default {
   background: #f9f9f9 0% 0% no-repeat padding-box;
   border: 1px solid #ececec;
   border-radius: 5px;
+  padding: 2rem 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 8.4rem;
+  cursor: pointer;
   &__image {
+    svg {
+      width: 2rem;
+      height: 2rem;
+
+      path {
+        fill: var(--grey-light) !important;
+      }
+    }
   }
 
   &__text {
@@ -46,6 +56,20 @@ export default {
     font-size: 1.4rem;
     line-height: 1.68rem;
     color: var(--grey-light);
+    text-align: center;
+  }
+
+  &--selected {
+    background: var(--primary) 0% 0% no-repeat padding-box;
+    .category__image {
+      path {
+        fill: var(--white) !important;
+      }
+    }
+
+    .category__text {
+      color: var(--white);
+    }
   }
 }
 </style>
