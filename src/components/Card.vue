@@ -1,59 +1,73 @@
 <template>
   <div class="card">
-    <div class="card__icon">
-      <img :src="iconUrl" :alt="iconDescription" />
+    <div class="card__content">
+      <font-awesome-icon :icon="icon" class="card__icon" />
+
+      <h3 class="card__category">{{ category }}</h3>
+
+      <p v-if="!!description" class="card__description">{{ description }}</p>
     </div>
-
-    <h3 class="card__title">{{ title }}</h3>
-
-    <p class="card__description">{{ description }}</p>
-
     <div class="card__about">
-      <span class="card__price">R$ {{ price }}</span>
+      <price :price="price" currency-modifier="large" amount-modifier="large" />
       <button class="card__cta">Saiba Mais</button>
     </div>
   </div>
 </template>
 
 <script>
+import Price from "./Price.vue";
 export default {
   name: "Card",
+  components: {
+    Price,
+  },
   props: {
-    iconUrl: {
+    icon: {
       type: String,
       required: true,
     },
-    iconDescription: {
-      type: String,
-      required: true,
-    },
-    title: { type: String, required: true },
+    category: { type: String, required: true },
     description: { type: String },
-    price: Number,
+    price: { type: Number, required: true },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .card {
-  max-width: 305px;
   text-align: center;
   background: var(--white) 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 18px #0000000f;
   border-radius: 5px;
-
+  display: flex;
+  flex-direction: column;
   padding-top: 3rem;
-  &__icon {
-    text-align: center;
+
+  &__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
-  &__title {
+  &__icon {
+    text-align: center;
+    width: 2.6rem;
+    height: 3.5rem;
+
+    path {
+      fill: var(--tertiary);
+    }
+  }
+
+  &__category {
     font-size: 2rem;
     line-height: 2.4rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
     font-weight: 400;
-    color: #444444;
+    color: var(--grey-black);
 
     margin: 1.8rem 0;
   }
@@ -63,14 +77,15 @@ export default {
     margin-right: 2.5rem;
     font-size: 1.3rem;
     color: var(--grey);
-    line-height: 1.5rem;
+    line-height: 2.6rem;
   }
 
   &__about {
     margin-top: 4rem;
     height: 5.3rem;
-    background: transparent linear-gradient(39deg, #ff8e49 0%, #f0690a 100%) 0%
-      0% no-repeat padding-box;
+    background: transparent
+      linear-gradient(39deg, var(--secondary) 0%, var(--tertiary) 100%) 0% 0%
+      no-repeat padding-box;
     border-radius: 0px 0px 5px 5px;
 
     display: flex;
@@ -78,13 +93,8 @@ export default {
     align-items: center;
   }
 
-  &__price {
-    font-size: 2.2rem;
-    line-height: 2.6rem;
-    color: var(--white);
-  }
-
   &__cta {
+    cursor: pointer;
     border: none;
     background: transparent;
     color: var(--white);
