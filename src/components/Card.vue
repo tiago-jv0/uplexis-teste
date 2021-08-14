@@ -9,7 +9,7 @@
     </div>
     <div class="card__about">
       <price :price="price" currency-modifier="large" amount-modifier="large" />
-      <button class="card__cta">Saiba Mais</button>
+      <button class="card__cta" @click="openDetails">Saiba Mais</button>
     </div>
   </div>
 </template>
@@ -29,6 +29,20 @@ export default {
     category: { type: String, required: true },
     description: { type: String },
     price: { type: Number, required: true },
+  },
+  methods: {
+    openDetails() {
+      const componentDetails = {
+        icon: this.icon,
+        category: this.category,
+        description: this.description,
+        price: this.price,
+      };
+      this.$router.push({
+        name: "details",
+        params: componentDetails,
+      });
+    },
   },
 };
 </script>
