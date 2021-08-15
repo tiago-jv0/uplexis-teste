@@ -7,7 +7,7 @@ describe("BaseButton component", () => {
     const wrapper = mount(BaseButton, {
       propsData: {
         text: "Clique Aqui",
-        variant: "medium",
+        size: "medium",
       },
     });
 
@@ -19,7 +19,7 @@ describe("BaseButton component", () => {
     const wrapper = mount(BaseButton, {
       propsData: {
         text: "Clique Aqui",
-        variant: "medium",
+        size: "medium",
       },
       listeners: {
         click: handleClick,

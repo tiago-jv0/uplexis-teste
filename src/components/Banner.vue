@@ -31,7 +31,7 @@
         <base-button
           @click.stop.prevent="openDetails()"
           text="Saiba Mais"
-          variant="small"
+          size="small"
         />
       </div>
     </div>

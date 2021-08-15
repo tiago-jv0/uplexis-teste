@@ -1,5 +1,5 @@
 <template>
-  <button :class="['button', `button--${variant}`]" v-on="$listeners">
+  <button :class="['button', `button--${size}`]" v-on="$listeners">
     {{ text }}
   </button>
 </template>
@@ -8,7 +8,7 @@
 export default {
   name: "BaseButton",
   props: {
-    variant: {
+    size: {
       type: String,
       required: true,
     },

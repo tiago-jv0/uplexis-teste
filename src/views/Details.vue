@@ -58,7 +58,7 @@
           color-modifier="black"
           amount-modifier="xlarge"
         />
-        <base-button text="Habilitar" variant="small" />
+        <base-button text="Habilitar" size="small" />
       </div>
     </div>
   </main>
