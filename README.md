@@ -26,7 +26,7 @@
 
 ## Para fazer download de todas as dependências do projeto, utilize o seguinte comando :
 ```
-yarn install
+yarn
 ```
 
 ### Para rodar a aplicação em um ambiente de desenvolvimento, utilize o seguinte comando :
