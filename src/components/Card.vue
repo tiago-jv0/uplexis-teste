@@ -8,7 +8,7 @@
       <p v-if="!!description" class="card__description">{{ description }}</p>
     </div>
     <div class="card__about">
-      <price :price="price" currency-modifier="large" amount-modifier="large" />
+      <price :price="price" currency-size="large" amount-size="large" />
       <button class="card__cta" @click="openDetails">Saiba Mais</button>
     </div>
   </div>

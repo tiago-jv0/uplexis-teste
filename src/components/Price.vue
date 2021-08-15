@@ -4,15 +4,12 @@
     <small
       :class="[
         'price__currency',
-        currencyModifier && `price__currency--${currencyModifier}`,
+        currencySize && `price__currency--${currencySize}`,
       ]"
       >R$</small
     >
     <span
-      :class="[
-        'price__amount',
-        amountModifier && `price__amount--${amountModifier}`,
-      ]"
+      :class="['price__amount', amountSize && `price__amount--${amountSize}`]"
     >
       {{ formattedPrice }}</span
     >
@@ -26,7 +23,7 @@ export default {
     price: {
       type: Number,
     },
-    currencyModifier: {
+    currencySize: {
       type: String,
       default: () => "",
     },
@@ -34,7 +31,7 @@ export default {
       type: String,
       default: () => "white",
     },
-    amountModifier: {
+    amountSize: {
       type: String,
       default: () => "",
     },

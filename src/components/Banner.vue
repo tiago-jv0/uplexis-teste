@@ -23,11 +23,7 @@
       </div>
 
       <div class="banner__footer">
-        <price
-          :price="price"
-          currency-modifier="small"
-          amount-modifier="xlarge"
-        />
+        <price :price="price" currency-size="small" amount-size="xlarge" />
         <base-button
           @click.stop.prevent="openDetails()"
           text="Saiba Mais"

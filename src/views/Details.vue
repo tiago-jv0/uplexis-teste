@@ -56,7 +56,7 @@
           v-if="details.price"
           :price="details.price"
           color-modifier="black"
-          amount-modifier="xlarge"
+          amount-size="xlarge"
         />
         <base-button text="Habilitar" size="small" />
       </div>
