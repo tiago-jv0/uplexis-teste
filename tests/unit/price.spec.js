@@ -17,9 +17,9 @@ describe("Price component", () => {
     const wrapper = mount(Price, {
       propsData: {
         price: 20.59,
-        currencyModifier: "xlarge",
+        currencySize: "xlarge",
         colorModifier: "black",
-        amountModifier: "small",
+        amountSize: "small",
       },
     });
 
