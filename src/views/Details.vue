@@ -99,7 +99,7 @@ export default {
       this.$router.push("/");
     },
   },
-  mounted() {
+  created() {
     this.details = this.$route.params;
   },
 };
