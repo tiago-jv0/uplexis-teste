@@ -24,6 +24,8 @@
 | Font Awesome      | Utilização dos diversos ícones que eles disponibilizam    |
 | Vue Select        | Utilização do componente de select                        |
 
+## Para rodar o projeto será necessário instalar o yarn - [guia de instalação](https://classic.yarnpkg.com/en/docs/install/#debian-stable)
+
 ## Para fazer download de todas as dependências do projeto, utilize o seguinte comando :
 ```
 yarn
