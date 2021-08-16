@@ -26,21 +26,25 @@ describe("Banner component", () => {
     expect(wrapper.find(".banner__description").text()).toBe(
       bannerMock.description
     );
-    expect(wrapper.find(".banner__main--white").exists()).toBeFalsy();
-    expect(wrapper.find(".banner__title--white").exists()).toBeFalsy();
-    expect(wrapper.find(".banner__description--white").exists()).toBeFalsy();
+    expect(wrapper.find(".banner__main--secondary").exists()).toBeFalsy();
+    expect(wrapper.find(".banner__title--secondary").exists()).toBeFalsy();
+    expect(
+      wrapper.find(".banner__description--secondary").exists()
+    ).toBeFalsy();
   });
 
-  test("should add white modifier when isWhite is passed", () => {
+  test("should add secondary modifier when isSecondary is passed", () => {
     const wrapper = mount(Banner, {
       localVue,
       router,
-      propsData: { ...bannerMock, isWhite: true },
+      propsData: { ...bannerMock, isSecondary: true },
     });
 
-    expect(wrapper.find(".banner__main--white").exists()).toBeTruthy();
-    expect(wrapper.find(".banner__title--white").exists()).toBeTruthy();
-    expect(wrapper.find(".banner__description--white").exists()).toBeTruthy();
+    expect(wrapper.find(".banner__main--secondary").exists()).toBeTruthy();
+    expect(wrapper.find(".banner__title--secondary").exists()).toBeTruthy();
+    expect(
+      wrapper.find(".banner__description--secondary").exists()
+    ).toBeTruthy();
   });
 
   test("should go to root page when user clicks banner__logo", async () => {

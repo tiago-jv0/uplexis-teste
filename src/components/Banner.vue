@@ -1,12 +1,14 @@
 <template>
   <div class="banner">
-    <div :class="['banner__main', isWhite && 'banner__main--white']">
+    <div :class="['banner__main', isSecondary && 'banner__main--secondary']">
       <div class="banner__header">
         <router-link to="/">
           <img class="banner__logo" :src="logo" alt="Logo Upminer" />
         </router-link>
 
-        <h3 :class="['banner__title', isWhite && 'banner__title--white']">
+        <h3
+          :class="['banner__title', isSecondary && 'banner__title--secondary']"
+        >
           {{ title }}
         </h3>
       </div>
@@ -15,7 +17,7 @@
         <p
           :class="[
             'banner__description',
-            isWhite && 'banner__description--white',
+            isSecondary && 'banner__description--secondary',
           ]"
         >
           {{ description }}
@@ -66,7 +68,7 @@ export default {
       type: Number,
       required: true,
     },
-    isWhite: {
+    isSecondary: {
       type: Boolean,
       required: false,
       default: () => false,
@@ -74,7 +76,7 @@ export default {
   },
 
   data() {
-    const backgroundColor = this.isWhite
+    const backgroundColor = this.isSecondary
       ? "var(--white)"
       : "var(--banner-background-second-color)";
 
@@ -124,7 +126,7 @@ export default {
       var(--banner-background-second-color) 75%
     );
 
-    &--white {
+    &--secondary {
       background-image: linear-gradient(
         to right,
         var(--grey) 0%,
@@ -155,7 +157,7 @@ export default {
     font-size: 1.6rem;
     font-weight: 400;
 
-    &--white {
+    &--secondary {
       color: var(--dark);
     }
 
@@ -186,7 +188,7 @@ export default {
     font-size: 1.4rem;
     line-height: 1.9rem;
 
-    &--white {
+    &--secondary {
       color: var(--grey-light);
     }
 
