@@ -13,12 +13,14 @@ const mockCards = [
     id: 0,
     icon: "university",
     category: "Profissional",
+    name: "UpMiner",
     price: 25.99,
   },
   {
     id: 1,
     icon: "university",
     category: "Reguladores",
+    name: "UpMap",
     description:
       "O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.",
     price: 24.99,
@@ -26,6 +28,7 @@ const mockCards = [
   {
     id: 2,
     icon: "university",
+    name: "UpLexis",
     category: "Reguladores",
     description:
       "O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.",
