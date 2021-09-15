@@ -9,6 +9,7 @@ library.add(fas);
 
 const mockCard = {
   icon: "university",
+  name: "UpMap",
   category: "Reguladores",
   description:
     "O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.",
@@ -24,7 +25,7 @@ describe("Card component", () => {
       },
     });
 
-    expect(wrapper.text()).toContain("Reguladores");
+    expect(wrapper.text()).toContain("UpMap");
     expect(wrapper.find(".card__description").exists()).toBeTruthy();
     expect(wrapper.text()).toContain(
       "O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte."
@@ -36,6 +37,7 @@ describe("Card component", () => {
       propsData: {
         icon: "university",
         category: "Reguladores",
+        name: "upMap",
         price: 29.99,
       },
       stubs: {
@@ -70,6 +72,7 @@ describe("Card component", () => {
       params: {
         icon: "university",
         category: "Reguladores",
+        name: "UpMap",
         description:
           "O aplicativo Balanço Patrimonial realiza a consulta de todos os balanços que são publicados nos Diários Oficiais de empresas S.A., de capital aberto e limitadas (LTDA) de grande porte.",
         price: 29.99,
