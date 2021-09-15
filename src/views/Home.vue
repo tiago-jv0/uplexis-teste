@@ -29,8 +29,7 @@ import "vue-select/dist/vue-select.css";
 import Cards from "../components/Cards.vue";
 import Categories from "../components/Categories.vue";
 
-import CategoriesMock from "../mocks/categories.mock";
-import CategoriesCardMock from "../mocks/categories-card.mock";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Home",
@@ -45,6 +44,10 @@ export default {
     },
   },
 
+  created() {
+    this.$store.dispatch("FETCH_ALL");
+  },
+
   data() {
     return {
       orderOptions: [
@@ -53,9 +56,14 @@ export default {
       ],
       orderCardsBy: "lancamento",
       filterCardsBy: "Mundo",
-      categories: CategoriesMock,
-      cards: CategoriesCardMock,
     };
+  },
+
+  computed: {
+    ...mapGetters({
+      categories: "sources",
+      cards: "apps",
+    }),
   },
 };
 </script>
