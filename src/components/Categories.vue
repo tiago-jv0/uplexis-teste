@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Category from "./Category.vue";
 export default {
   components: { Category },
@@ -28,6 +29,12 @@ export default {
     onCategoryChosen(category) {
       this.$emit("on-category-chosen", category);
     },
+  },
+
+  computed: {
+    ...mapGetters({
+      categories: "sources",
+    }),
   },
 };
 </script>
