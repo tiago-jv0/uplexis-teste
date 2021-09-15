@@ -7,7 +7,7 @@
           @click="goBackToMainPage"
           icon="chevron-left"
         />
-        <h3 class="content__title">{{ details.category }}</h3>
+        <h3 class="content__title">{{ details.name }}</h3>
       </div>
       <carousel
         :autoplay="true"
