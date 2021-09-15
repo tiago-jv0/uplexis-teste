@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://demo4537116.mockable.io/";
 
-class AxiosAdapter {
+class HttpClientService {
   async post({ url, body, headers }) {
     const apiResponse = await axios.post(url, body, { headers });
     return apiResponse.data;
@@ -23,4 +23,4 @@ class AxiosAdapter {
   }
 }
 
-export default new AxiosAdapter();
+export default new HttpClientService();
