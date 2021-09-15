@@ -3,7 +3,7 @@
     <div class="card__content">
       <font-awesome-icon :icon="icon" class="card__icon" />
 
-      <h3 class="card__category">{{ category }}</h3>
+      <h3 class="card__category">{{ name }}</h3>
 
       <p v-if="!!description" class="card__description">{{ description }}</p>
     </div>
@@ -26,7 +26,9 @@ export default {
       type: String,
       required: true,
     },
+    name: { type: String, required: true },
     category: { type: String, required: true },
+
     description: { type: String },
     price: { type: Number, required: true },
   },
@@ -34,6 +36,7 @@ export default {
     openDetails() {
       const componentDetails = {
         icon: this.icon,
+        name: this.name,
         category: this.category,
         description: this.description,
         price: this.price,
