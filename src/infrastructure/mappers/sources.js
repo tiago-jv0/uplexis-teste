@@ -1,8 +1,9 @@
 class SourcesMapper {
   static fromApiToApp(sources, icons) {
     const mappedSources = sources.map((source, index) => {
-      const icon = icons[index].icon.replace("fas fa-", "");
-
+      const icon = icons[index].icon
+        .replace("fas fa-", "")
+        .replace("far fa-", "");
       return {
         id: source.id,
         category: source.name,

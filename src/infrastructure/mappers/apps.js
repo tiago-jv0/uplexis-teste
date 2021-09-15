@@ -1,7 +1,9 @@
 class AppsMapper {
   static fromApiToApp(apps, icons) {
     return apps.map((app, index) => {
-      const icon = icons[index].icon.replace("fas fa-", "");
+      const icon = icons[index].icon
+        .replace("fas fa-", "")
+        .replace("far fa-", "");
 
       return {
         id: app.id,
