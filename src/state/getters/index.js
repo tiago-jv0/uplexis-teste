@@ -1,9 +1,9 @@
-import AppsMutations from "./apps";
-import SourceMutations from "./sources";
-import IconsMutations from "./icons";
+import AppsGetters from "./apps";
+import SourceGetters from "./sources";
+import IconsGetters from "./icons";
 
 export default {
-  ...AppsMutations,
-  ...SourceMutations,
-  ...IconsMutations,
+  ...AppsGetters,
+  ...SourceGetters,
+  ...IconsGetters,
 };
